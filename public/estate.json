@@ -1,0 +1,74 @@
+[
+    {
+      "id": "001",
+      "estate_title": "Cozy Family Home",
+      "segment_name": "Single-family Home",
+      "description": "Beautiful single-family home perfect for a family. Spacious living area, modern kitchen, and backyard garden.",
+      "price": 350000,
+      "status": "sale",
+      "area": "2000 sq ft",
+      "location": "123 Main Street, Anytown, TX 12345",
+      "facilities": ["living room", "kitchen", "backyard garden"],
+      "image_url": "https://i.ibb.co/DLCdTCj/cozy-family-home.jpg"
+    },
+    {
+      "id": "002",
+      "estate_title": "Luxurious Townhouse",
+      "segment_name": "Townhouse",
+      "description": "Elegant townhouse with contemporary design. Features a private patio and access to community amenities.",
+      "price": 2500,
+      "status": "rent",
+      "area": "1500 sq ft",
+      "location": "456 Elm Street, Smallville, CA 98765",
+      "facilities": ["living room", "kitchen", "private patio", "community amenities"],
+      "image_url": "https://i.ibb.co/12yb6fM/uxurious-Townhouse.jpg"
+    },
+    {
+      "id": "003",
+      "estate_title": "Modern Apartment",
+      "segment_name": "Apartment",
+      "description": "Stylish apartment in a prime location. Offers a swimming pool, fitness center, and gated community.",
+      "price": 1500,
+      "status": "rent",
+      "area": "800 sq ft",
+      "location": "789 Oak Avenue, Metro City, NY 54321",
+      "facilities": ["living room", "kitchen", "swimming pool", "fitness center", "gated community"],
+      "image_url": "https://i.ibb.co/pJR0dJ8/Modern-Apartment.jpg"
+    },
+    {
+      "id": "004",
+      "estate_title": "Student Housing",
+      "segment_name": "Student Housing",
+      "description": "Spacious student housing near the university campus. Each room equipped with essential amenities.",
+      "price": 800,
+      "status": "rent",
+      "area": "2000 sq ft",
+      "location": "101 University Boulevard, Campus Town, CA 12345",
+      "facilities": ["living room", "kitchen"],
+      "image_url": "https://i.ibb.co/71ttwj8/Student-Housing.jpg"
+    },
+    {
+      "id": "005",
+      "estate_title": "Senior Living Apartment",
+      "segment_name": "Senior Living Community",
+      "description": "Comfortable studio apartment in a senior living community. Offers meal service, housekeeping, and medical assistance.",
+      "price": 2000,
+      "status": "rent",
+      "area": "500 sq ft",
+      "location": "222 Maple Lane, Retirement Village, FL 67890",
+      "facilities": ["living room", "kitchen", "meal service", "housekeeping", "medical assistance"],
+      "image_url": "https://i.ibb.co/rQ5xq5z/Senior-Living-Apartment.jpg"
+    },
+    {
+      "id": "006",
+      "estate_title": "Seaside Vacation Rental",
+      "segment_name": "Vacation Rental",
+      "description": "Charming vacation rental with beachfront access. Enjoy stunning views and modern amenities.",
+      "price": 300,
+      "status": "rent",
+      "area": "1600 sq ft",
+      "location": "555 Beachfront Avenue, Seaside Resort, CA 54321",
+      "facilities": ["living room", "kitchen", "beachfront access"],
+      "image_url": "https://i.ibb.co/LhDJPkK/Seaside-Vacation-Rental.jpg"
+    }
+  ]
