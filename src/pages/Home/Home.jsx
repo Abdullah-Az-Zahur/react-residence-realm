@@ -10,7 +10,11 @@ const Home = () => {
             estate={estate}
             ></Banner>
             <h2>this is home</h2>
+            <div>
+
+            </div>
         </div>
+        
     );
 };
 

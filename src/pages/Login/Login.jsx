@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
 
-    
+    const { signIn, user } = useContext(AuthContext);
+
+    const handleLogin = e => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email');
+        const password = form.get('password')
+        console.log(user);
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
 
     return (
         <div>
             {/* login */}
             <div>
                 <h2 className="text-3xl my-10  font-bold text-center">Please Login</h2>
-                <form  className="card-body md:w-3/4 lg:w-1/2 mx-auto">
+                <form onSubmit={handleLogin} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
