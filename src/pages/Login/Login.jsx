@@ -1,29 +1,63 @@
 import React, { useContext } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../providers/AuthProvider';
+import { AuthContext } from '../../providers/AuthProvider'
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Login = () => {
 
-    const { signIn, user } = useContext(AuthContext);
+    const { signIn, popUpSignIn } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        popUpSignIn(googleProvider)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                toast('Login success')
+            })
+            .catch((error) => {
+                console.error(error.message)
+                toast(error.message)
+            })
+    }
+
+    const handleGithubSignIn = () => {
+        popUpSignIn(githubProvider)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                toast('Login success')
+            })
+            .catch((error) => {
+                console.error(error.message)
+                toast(error.message)
+            })
+    }
 
     const handleLogin = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password')
-        console.log(user);
+
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
+                toast('Login success')
             })
             .catch(error => {
                 console.error(error)
+                toast(error.message)
             })
     }
 
     return (
         <div>
+            <ToastContainer />
             {/* login */}
             <div>
                 <h2 className="text-3xl my-10  font-bold text-center">Please Login</h2>
@@ -47,6 +81,14 @@ const Login = () => {
                         <button className="btn btn-primary">Login</button>
                     </div>
                 </form>
+                <div className='flex gap-2 w-full  items-center justify-center'>
+                    <div className=''>
+                        <button onClick={handleGoogleSignIn} className='btn '>Google Login</button>
+                    </div>
+                    <div className=''>
+                        <button onClick={handleGithubSignIn} className='btn'>Github Login</button>
+                    </div>
+                </div>
                 <p className='text-center mt-4'>Do not have an account <Link className='text-blue-600 font-bold' to='/register'>Register</Link></p>
             </div>
         </div>
