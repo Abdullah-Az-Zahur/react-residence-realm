@@ -1,11 +1,13 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Estate from "../pages/Estate/Estate";
+import PrivetRoutes from "./PrivetRoutes";
+import UserProfile from "../pages/UserProfile/UserProfile";
+import Contact from "../pages/Contact/Contact";
+
 
 const router = createBrowserRouter([
   {
@@ -13,19 +15,45 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Home></Home>,
-        loader: () => fetch('/estate.json'),
+        loader: () => fetch("/estate.json"),
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: "/estate/:id",
+        element: (
+          <PrivetRoutes>
+            <Estate></Estate>
+          </PrivetRoutes>
+        ),
+        loader: () => fetch("/estate.json"),
       },
       {
-        path:'/register',
-        element: <Register></Register>
-      }
-    ]
+        path:"/contact",
+        element:<Contact></Contact>
+      },
+      {
+        path:"/update_profile",
+        element:<PrivetRoutes>
+          <UserProfile></UserProfile>
+        </PrivetRoutes>
+      },
+      {
+        path:"/user_profile",
+        element:<PrivetRoutes>
+          <UserProfile></UserProfile>
+        </PrivetRoutes>
+      },
+
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
   },
 ]);
 
