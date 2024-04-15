@@ -7,12 +7,15 @@ import Estate from "../pages/Estate/Estate";
 import PrivetRoutes from "./PrivetRoutes";
 import UserProfile from "../pages/UserProfile/UserProfile";
 import Contact from "../pages/Contact/Contact";
+import NotFound from "../pages/NotFound/NotFound";
+import UserUpdate from "../pages/UserUpdate/UserUpdate";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<NotFound></NotFound>,
     children: [
       {
         path: "/",
@@ -35,7 +38,7 @@ const router = createBrowserRouter([
       {
         path:"/update_profile",
         element:<PrivetRoutes>
-          <UserProfile></UserProfile>
+          <UserUpdate></UserUpdate>
         </PrivetRoutes>
       },
       {

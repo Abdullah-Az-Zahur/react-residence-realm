@@ -7,6 +7,11 @@ import { ToastContainer, toast } from 'react-toastify';
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
+    const updateUserData=(user, name, photo)=>{
+        console.log('update hetting')
+        .then()
+        .catch()
+    }
 
     const handleRegister = e => {
         e.preventDefault();
